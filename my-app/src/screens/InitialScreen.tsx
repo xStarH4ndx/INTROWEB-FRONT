@@ -1,7 +1,8 @@
+import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Button, Text, useTheme, useThemeMode } from '@rneui/themed';
 import { View } from 'react-native';
-import CharacterList from '../components/CharacterList';
+import {CharacterList} from '../components/CharacterList';
 import { RootStackParamList } from '../navigation/rootStackNavigation';
 
 const InitialScreen = ({
