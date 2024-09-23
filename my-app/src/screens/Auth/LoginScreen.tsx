@@ -4,6 +4,7 @@ import { Button, Text, useTheme } from '@rneui/themed';
 import { View } from 'react-native';
 import { RootStackParamList } from '../../navigation/rootStackNavigation';
 
+
 const LoginScreen = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
