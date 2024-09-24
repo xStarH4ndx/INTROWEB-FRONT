@@ -1,17 +1,33 @@
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Button } from '@rneui/themed';
-import { Text, View } from 'react-native';
+import { Text, useTheme } from '@rneui/themed';
+import { View } from 'react-native';
 import { RootStackParamList } from '../../navigation/rootStackNavigation';
 
 const HomeScreen = ({
   navigation,
 }: NativeStackScreenProps<RootStackParamList>) => {
+  const { theme } = useTheme();
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button onPress={() => navigation.navigate('Login')}>GO LOGIN</Button>
-      <Button onPress={() => navigation.navigate('Initial')}>GO INITIAL</Button>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: theme.colors.background,
+      }}
+    >
+      <Text
+        h3
+        style={{
+          color: '#00FF00',
+          fontFamily: 'Comic Sans MS', // Puedes cambiar la fuente a otra que te guste
+          textAlign: 'center',
+        }}
+      >
+        ¡Usuario autenticado con éxito! 🎉
+      </Text>
     </View>
   );
 };
