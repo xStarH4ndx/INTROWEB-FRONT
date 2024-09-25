@@ -21,12 +21,12 @@ const HomeScreen = ({
       <Text
         h3
         style={{
-          color: '#00FF00',
-          fontFamily: 'Comic Sans MS', // Puedes cambiar la fuente a otra que te guste
+          color: '#fff',
+          fontFamily: 'Poppins', // Puedes cambiar la fuente a otra que te guste
           textAlign: 'center',
         }}
       >
-        ¡Usuario autenticado con éxito! 🎉
+        ¡Usuario autenticado con éxito!
       </Text>
     </View>
   );

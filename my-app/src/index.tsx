@@ -5,8 +5,8 @@ import RootStackNavigation from './navigation/rootStackNavigation';
 
 const theme = createTheme({
   lightColors: {
-    primary: 'red',
-    background: '#fff',
+    primary: '#0066ff',
+    background: '#315659',
   },
   darkColors: {
     primary: 'blue',
@@ -14,7 +14,7 @@ const theme = createTheme({
   },
   components: {
     Button: {
-      color: 'primary',
+      color: '#ffbc42',
     },
   },
 });

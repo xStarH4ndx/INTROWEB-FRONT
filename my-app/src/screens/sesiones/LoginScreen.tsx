@@ -24,7 +24,7 @@ const LoginScreen = ({
       if (response.data.success) {
         console.log('Login exitoso:', response.data);
         // Navega a la pantalla deseada después de un login exitoso
-        navigation.navigate('Home');
+        navigation.navigate('OperatorPage');
       } else {
         Alert.alert('Error', 'Usuario o contraseña incorrectos');
       }
@@ -40,15 +40,15 @@ const LoginScreen = ({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#E3F2FD', // Fondo azul claro
+        backgroundColor: theme.colors.background, // Fondo azul claro
       }}
     >
       <Text
         h4
         style={{
-          color: '#0D47A1', // Azul oscuro para el título
+          color: '#fff', // Azul oscuro para el título
           marginBottom: 20,
-          fontFamily: 'Comic Sans MS', // Fuente divertida
+          fontFamily: 'Poppins', // Fuente divertida
         }}
       >
         Login Screen
@@ -59,10 +59,10 @@ const LoginScreen = ({
         value={username}
         onChangeText={setUsername}
         containerStyle={{ marginBottom: 15 }}
-        inputStyle={{ color: '#000000' }} // Texto en negro
-        placeholderTextColor="#B0BEC5"
+        inputStyle={{ color: '#fff' }} // Texto en negro
+        placeholderTextColor="#fff"
         style={{
-          borderColor: '#0D47A1', // Borde azul oscuro
+          borderColor: '#fff', // Borde azul oscuro
           borderWidth: 1,
           borderRadius: 5,
         }}
@@ -74,10 +74,10 @@ const LoginScreen = ({
         onChangeText={setPassword}
         secureTextEntry
         containerStyle={{ marginBottom: 15 }}
-        inputStyle={{ color: '#000000' }} // Texto en negro
-        placeholderTextColor="#B0BEC5"
+        inputStyle={{ color: '#fff' }} // Texto en negro
+        placeholderTextColor="#fff"
         style={{
-          borderColor: '#0D47A1', // Borde azul oscuro
+          borderColor: '#fff', // Borde azul oscuro
           borderWidth: 1,
           borderRadius: 5,
         }}
@@ -87,20 +87,19 @@ const LoginScreen = ({
         title="Entrar"
         onPress={handleLogin}
         buttonStyle={{
-          backgroundColor: '#1976D2', // Azul medio para el botón
           borderRadius: 5,
         }}
       />
 
       <Button
-        onPress={() => navigation.navigate('Initial')}
-        title="GO INITIAL"
-        buttonStyle={{ backgroundColor: '#0D47A1', borderRadius: 5 }}
+        onPress={() => navigation.navigate('AdminPage')}
+        title="GO ADMIN"
+        buttonStyle={{ borderRadius: 5, marginTop: 10 }}
       />
       <Button
-        onPress={() => navigation.navigate('Home')}
-        title="GO HOME"
-        buttonStyle={{ backgroundColor: '#0D47A1', borderRadius: 5 }}
+        onPress={() => navigation.navigate('OperatorPage')}
+        title="GO OPERATOR"
+        buttonStyle={{ borderRadius: 5, marginTop: 10 }}
       />
     </View>
   );
