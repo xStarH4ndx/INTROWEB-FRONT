@@ -23,7 +23,7 @@ const LoginScreen = ({
     try {
       const email = username;
       const response = await axios.post(
-        'https://shell-enhanced-subjective-glass.trycloudflare.com/auth/login', 
+        'https://census-sally-largely-ind.trycloudflare.com/', 
         { email, password }
       );
 
