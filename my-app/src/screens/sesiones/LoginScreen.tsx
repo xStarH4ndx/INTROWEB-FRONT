@@ -19,6 +19,7 @@ const LoginScreen = ({
   const { theme } = useTheme();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -27,14 +28,16 @@ const LoginScreen = ({
         'https://census-sally-largely-ind.trycloudflare.com/auth/login', 
         { email, password }
       );
-
+      //
       response.data.success = true;
       if (response.data.success) {
         console.log('Login exitoso:', response.data);
-        await AsyncStorage.setItem('token', response.data.token);
+        await AsyncStorage.setItem('token', response.data.token); // Almacenar el token
+        await AsyncStorage.setItem('refreshToken', response.data.refreshToken);// Almacenar el refreshToken
         navigation.navigate('OperatorPage');
       } else {
         Alert.alert('Error', 'Usuario o contraseña incorrectos');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Error en el login:', error);
@@ -76,6 +79,9 @@ const LoginScreen = ({
           />
 
           <Button
+            disabled={loading}
+            loading={loading}
+            loadingProps={{ size: 'large', color: 'white' }}
             title="Entrar"
             onPress={handleLogin}
             buttonStyle={[styles.button, { backgroundColor: theme.colors.primary }]}
