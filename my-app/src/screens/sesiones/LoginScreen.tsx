@@ -6,6 +6,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RootStackParamList } from '../../navigation/rootStackNavigation';
 import { LinearGradient } from 'expo-linear-gradient';
+import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 
 async function getToken() {
   const token = await AsyncStorage.getItem('token');
@@ -23,12 +24,11 @@ const LoginScreen = ({
     try {
       const email = username;
       const response = await axios.post(
-        'https://census-sally-largely-ind.trycloudflare.com/', 
+        'https://census-sally-largely-ind.trycloudflare.com/auth/login', 
         { email, password }
       );
 
       response.data.success = true;
-      response.data.token = 'token';
       if (response.data.success) {
         console.log('Login exitoso:', response.data);
         await AsyncStorage.setItem('token', response.data.token);
